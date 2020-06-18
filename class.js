@@ -40,3 +40,22 @@ class Experiment{
 }
 const experiment = new Experiment();
 console.log(experiment.privateField);
+
+class Article{
+    static publisher = 'Jingoo Kim';
+    constructor(articleNumber){
+        this.articleNumber = articleNumber;
+    }
+
+    static printPublisher(){
+        console.log(this.publisher);
+    }
+}
+
+const a1 = new Article(1);
+const a2 = new Article(2);
+console.log(Article.publisher);
+Article.printPublisher();
+
+console.log(a1.publisher);
+a1.printPublisher();
