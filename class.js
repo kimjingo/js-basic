@@ -57,5 +57,47 @@ const a2 = new Article(2);
 console.log(Article.publisher);
 Article.printPublisher();
 
-console.log(a1.publisher);
-a1.printPublisher();
+// console.log(a1.publisher);
+// a1.printPublisher();
+
+
+class Shape{
+    constructor(width, height, color) {
+        this.width = width;
+        this.height = height;
+        this.color = color;
+    }
+    draw(){
+        console.log(`drawing ${this.color} color of`);
+    }
+
+    getArea(){
+        return this.width * this.height;
+    }
+}
+
+class Rectangle extends Shape {}
+class Triangle extends Shape {
+    draw(){
+        super.draw();
+        console.log('tri');
+    }
+
+    getArea(){
+        return (this.width * this.height) /2;
+    }
+}
+
+const rec = new Rectangle(20,20,'blue');
+rec.draw();
+console.log(rec.getArea())
+const tri = new Triangle(20,20,'red');
+tri.draw();
+console.log(tri.getArea())
+
+// class checking : instanceof
+
+console.log(rec instanceof Rectangle);
+console.log(tri instanceof Rectangle);
+console.log(tri instanceof Shape);
+console.log(rec instanceof Object);
